@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <style>
-        /* 기본 스타일 초기화 */
+        /* 화면 전체의 기본 여백 제거 */
         * {
             margin: 0;
             padding: 0;
@@ -17,56 +17,36 @@
             width: 100%;
         }
 
-        /* 🖼️ 배경 이미지가 들어가는 큰 섹션 구역 */
-        .bg-section {
-            width: 100%;
-            background-size: cover;       /* 배경 이미지를 섹션 크기에 꽉 채움 */
-            background-position: center;    /* 배경 이미지 가운데 정렬 */
-            background-repeat: no-repeat;   /* 배경 반복 안 함 */
-            padding: 50px 0;               /* 배경 안의 원래 이미지가 답답해 보이지 않게 위아래 여백 제공 */
-        }
-
-        /* [배경 이미지 등록] 여기에 각각 다른 배경 이미지를 적어주세요 */
-        .bg-1 {
-            background-image: url('배경1.png'); /* 첫 번째 섹션의 배경 이미지 파일명 */
-        }
-
-        .bg-2 {
-            background-image: url('배경2.png'); /* 두 번째 섹션의 배경 이미지 파일명 */
-        }
-
-        /* 📸 내부에 들어가는 원래 이미지의 스타일 (가로 600px 반응형) */
-        .content-image-container {
+        /* 이미지 섹션을 감싸는 구역 */
+        .landing-section {
             width: 100%;
             text-align: center;
         }
 
-        .content-image-container img {
-            width: 100%;          /* 모바일(600px 이하) 화면에서는 가로 꽉 참 */
-            max-width: 600px;     /* PC 등 큰 화면에서는 가로 600px로 고정 */
-            height: auto;         /* 원본 이미지 비율 유지 */
-            display: block;       /* 이미지 아래 미세한 공백 제거 */
+        /* 이미지 반응형 스타일 */
+        .landing-section img {
+            width: 100%;          /* 모바일(600px 이하)에서는 가로 화면에 꽉 찬 상태 */
+            max-width: 600px;     /* PC 등 큰 화면에서는 정확히 가로 600px 고정 */
+            height: auto;         /* 이미지 비율 유지 */
+            display: block;       /* 이미지 하단 미세한 공백 제거 */
             margin: 0 auto;       /* 가운데 정렬 */
         }
     </style>
 </head>
 <body>
 
-    <!-- ── 첫 번째 섹션 (배경 1 + 원래 이미지 1) ── -->
-    <section class="bg-section bg-1">
-        <div class="content-image-container">
-            <!-- 원래 들어가야 하는 첫 번째 이미지 파일명 -->
-            <img src="1번.png" alt="Original Image 1">
-        </div>
-    </section>
+    <!-- ── 1번 세트: 배경1 + 1번 이미지 ── -->
+    <div class="landing-section">
+        <img src="%E1%B1%80%E1%B8%BD1.png" alt="배경1">
+        <img src="1%E1%B2%84.png" alt="1번">
+    </div>
 
-    <!-- ── 두 번째 섹션 (배경 2 + 원래 이미지 2) ── -->
-    <section class="bg-section bg-2">
-        <div class="content-image-container">
-            <!-- 원래 들어가야 하는 두 번째 이미지 파일명 -->
-            <img src="2번.png" alt="Original Image 2">
-        </div>
-    </section>
+    <!-- ── 2번 세트: 배경2 + 2번 이미지 ── -->
+    <div class="landing-section">
+        <img src="%E1%B1%80%E1%B8%BD2.png" alt="배경2">
+        <img src="2%E1%B2%84.png" alt="2번">
+    </div>
 
 </body>
 </html>
+
