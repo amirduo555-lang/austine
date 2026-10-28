@@ -1,52 +1,104 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <style>
-        /* 화면 전체의 기본 여백 제거 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: #ffffff;
-            width: 100%;
-        }
+  <title>이미지 랜딩페이지</title>
 
-        /* 이미지 섹션을 감싸는 구역 */
-        .landing-section {
-            width: 100%;
-            text-align: center;
-        }
+  <style>
+    /* 기본 설정 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* 이미지 반응형 스타일 */
-        .landing-section img {
-            width: 100%;          /* 모바일(600px 이하)에서는 가로 화면에 꽉 찬 상태 */
-            max-width: 600px;     /* PC 등 큰 화면에서는 정확히 가로 600px 고정 */
-            height: auto;         /* 이미지 비율 유지 */
-            display: block;       /* 이미지 하단 미세한 공백 제거 */
-            margin: 0 auto;       /* 가운데 정렬 */
-        }
-    </style>
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* 공통 이미지 섹션 */
+    .image-section {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    /* 배경 이미지: 화면 가로폭 전체 */
+    .background-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* 위에 올라가는 이미지 정렬 영역 */
+    .overlay-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* 메인 이미지: 최대 600px */
+    .main-image {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* 모바일 대응 */
+    @media (max-width: 600px) {
+      .main-image {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- ── 1번 세트: 배경1 + 1번 이미지 ── -->
-    <div class="landing-section">
-        <img src="배경1.png" alt="배경1">
-        <img src="1번.png" alt="1번">
-    </div>
+  <!-- 섹션 1 -->
+  <section class="image-section">
+    <img
+      src="배경1.png"
+      alt=""
+      class="background-image"
+    >
 
-    <!-- ── 2번 세트: 배경2 + 2번 이미지 ── -->
-    <div class="landing-section">
-        <img src="배경2.png" alt="배경2">
-        <img src="2번.png" alt="2번">
+    <div class="overlay-content">
+      <img
+        src="1번.png"
+        alt="메인 이미지 1"
+        class="main-image"
+      >
     </div>
+  </section>
+
+  <!-- 섹션 2 -->
+  <section class="image-section">
+    <img
+      src="배경2.png"
+      alt=""
+      class="background-image"
+    >
+
+    <div class="overlay-content">
+      <img
+        src="2번.png"
+        alt="메인 이미지 2"
+        class="main-image"
+      >
+    </div>
+  </section>
 
 </body>
 </html>
-
