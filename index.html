@@ -1,1 +1,50 @@
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* 기본 스타일 초기화 (여백 제거) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff; /* 배경을 깔끔한 흰색으로 지정 */
+        }
+
+        /* 📸 반응형 이미지 섹션 스타일 */
+        .image-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;          /* 모바일(600px 이하)에서는 가로 화면에 꽉 차게 설정 */
+            max-width: 600px;     /* PC 등 넓은 화면에서는 가로 600px로 고정 */
+            height: auto;         /* 원본 이미지 비율 유지 */
+            display: block;       /* 이미지 하단의 미세한 여백 공백 제거 */
+            margin: 0 auto;       /* 화면 가운데 정렬 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 📸 첫 번째 이미지 섹션 -->
+    <section class="image-container">
+        <!-- 깃허브에 올린 첫 번째 이미지 파일명으로 변경하세요 -->
+        <img src="image1.jpg" alt="Landing Page Image 1">
+    </section>
+
+    <!-- 📸 두 번째 이미지 섹션 -->
+    <section class="image-container">
+        <!-- 깃허브에 올린 두 번째 이미지 파일명으로 변경하세요 -->
+        <img src="image2.jpg" alt="Landing Page Image 2">
+    </section>
+
+</body>
+</html>
