@@ -1,13 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>이미지 랜딩페이지</title>
 
   <style>
-    /* 기본 설정 */
     * {
       margin: 0;
       padding: 0;
@@ -20,7 +19,7 @@
       overflow-x: hidden;
     }
 
-    /* 공통 이미지 섹션 */
+    /* 이미지 섹션 */
     .image-section {
       position: relative;
       width: 100%;
@@ -28,30 +27,33 @@
       line-height: 0;
     }
 
-    /* 배경 이미지: 화면 가로폭 전체 */
+    /* 배경 이미지: 섹션을 꽉 채우고 넘치는 부분 자르기 */
     .background-image {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* 위에 올라가는 이미지 정렬 영역 */
-    .overlay-content {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* 메인 이미지 영역: 이미지 높이에 맞춰 섹션 높이 결정 */
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
     }
 
-    /* 메인 이미지: 최대 600px */
+    /* 메인 이미지: 최대 600px, 모바일은 화면 너비에 맞춤 */
     .main-image {
       display: block;
       width: 100%;
       max-width: 600px;
       height: auto;
-      object-fit: contain;
     }
 
     /* 모바일 대응 */
@@ -69,14 +71,14 @@
   <!-- 섹션 1 -->
   <section class="image-section">
     <img
-      src="배경1.png"
+      src="./배경1.png"
       alt=""
       class="background-image"
     >
 
     <div class="overlay-content">
       <img
-        src="1번.png"
+        src="./1번.png"
         alt="메인 이미지 1"
         class="main-image"
       >
@@ -86,14 +88,14 @@
   <!-- 섹션 2 -->
   <section class="image-section">
     <img
-      src="배경2.png"
+      src="./배경2.png"
       alt=""
       class="background-image"
     >
 
     <div class="overlay-content">
       <img
-        src="2번.png"
+        src="./2번.png"
         alt="메인 이미지 2"
         class="main-image"
       >
@@ -102,3 +104,4 @@
 
 </body>
 </html>
+```
